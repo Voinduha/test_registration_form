@@ -9,11 +9,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationFormWithFakerTest {
 
-    @BeforeAll
-    static void setup() {
-        Configuration.startMaximized = true;
-    }
-
     Faker faker = new Faker();
 
     String firstname = faker.name().firstName(),
@@ -21,6 +16,11 @@ public class RegistrationFormWithFakerTest {
            email = faker.internet().emailAddress(),
            phone = faker.number().digits(10),
            password = faker.internet().password(9, 15);
+
+    @BeforeAll
+    static void setup() {
+        Configuration.startMaximized = true;
+    }
 
     @Test
     void successRegistrationForm() {
