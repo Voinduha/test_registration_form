@@ -9,8 +9,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationFormWithFakerTest {
 
-
-
     @BeforeAll
     static void setup() {
         Configuration.startMaximized = true;
