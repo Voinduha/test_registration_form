@@ -20,7 +20,7 @@ public class RegistrationFormWithFakerTest {
            lastname = faker.name().lastName(),
            email = faker.internet().emailAddress(),
            phone = faker.number().digits(10),
-           password = "12345678";
+           password = faker.internet().password(9, 15);
 
     @Test
     void successRegistrationForm() {
