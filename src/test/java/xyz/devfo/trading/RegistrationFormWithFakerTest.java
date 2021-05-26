@@ -1,30 +1,23 @@
 package xyz.devfo.trading;
 
-import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class RegistrationFormWithFakerTest {
+public class RegistrationFormWithFakerTest extends TestBase {
 
     Faker faker = new Faker();
 
     String firstname = faker.name().firstName(),
-           lastname = faker.name().lastName(),
-           email = faker.internet().emailAddress(),
-           phone = faker.number().digits(10),
-           password = faker.internet().password(9, 15);
-
-    @BeforeAll
-    static void setup() {
-        Configuration.startMaximized = true;
-    }
+            lastname = faker.name().lastName(),
+            email = faker.internet().emailAddress(),
+            phone = faker.number().digits(10),
+            password = faker.internet().password(9, 15);
 
     @Test
     void successRegistrationForm() {
-        open("http://trading.devfo.xyz/register");
+        open("");
         $("[name=first_name]").setValue(firstname);
         $("[name=last_name]").setValue(lastname);
         $("[name=email]").setValue(email);
