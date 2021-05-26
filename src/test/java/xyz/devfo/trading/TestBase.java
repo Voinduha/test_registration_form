@@ -8,6 +8,5 @@ public class TestBase {
     @BeforeAll
     static void setup() {
         Configuration.startMaximized = true;
-        Configuration.baseUrl = "http://trading.devfo.xyz/register";
     }
 }
