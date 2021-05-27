@@ -8,10 +8,10 @@ public class RegistrationFormPage {
 
     Faker faker = new Faker();
     String firstname = faker.name().firstName(),
-            lastname = faker.name().lastName(),
-            email = faker.internet().emailAddress(),
-            phone = faker.number().digits(10),
-            password = faker.internet().password(9, 15);
+           lastname = faker.name().lastName(),
+           email = faker.internet().emailAddress(),
+           phone = faker.number().digits(10),
+           password = faker.internet().password(9, 15);
 
     public void openPage() {
         open("http://trading.devfo.xyz/register");
